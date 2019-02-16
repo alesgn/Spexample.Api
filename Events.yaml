@@ -8,21 +8,22 @@ openapi: 3.0.0
 info:
   version: 4.0.0
   title: Spexample API
-  description: Let's build this new awesome Spexample API v4
+  description: Let us build this new awesome Spexample API v4
 servers:
   - url: https://system.spexample.com/api/v4
-
-components:
-  parameters:
-    eventId: 'This is the Id of the event'
-
 paths:
   /events/{eventId}:
     get:
       summary: Retrieve events by eventId
-      operationsId: get-event
+      operationsId: get-event-by-id
       parameters:
-        $ref: '#/components/parameters/eventId'
+        - eventId: This is the Id of the event
+          in: path
+          description: Event ID
+          required: true
+          schema:
+            type: integer
+            format: int64
       responses:
         '200': 
           description: API event by Id reponse
