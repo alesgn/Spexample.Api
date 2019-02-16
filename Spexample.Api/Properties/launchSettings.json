@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Spexample.Api": {
+      "commandName": "Project",
+      "launchUrl": "api/v4/events",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:55708/"
+    }
+  }
+}

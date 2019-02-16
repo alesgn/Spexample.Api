@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spexample.Api", "Spexample.Api\Spexample.Api.csproj", "{F07409E3-52E5-42E9-92F2-B331647628B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spexample.Domain", "Spexample.Domain\Spexample.Domain.csproj", "{1763CB5E-0EE3-44B0-A3D1-86B8AEADB31D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAPISpec", "OpenAPISpec", "{826B78ED-396E-4BC2-8E10-C465BB420FE7}"
+	ProjectSection(SolutionItems) = preProject
+		Events.xaml = Events.xaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F07409E3-52E5-42E9-92F2-B331647628B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07409E3-52E5-42E9-92F2-B331647628B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07409E3-52E5-42E9-92F2-B331647628B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07409E3-52E5-42E9-92F2-B331647628B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1763CB5E-0EE3-44B0-A3D1-86B8AEADB31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1763CB5E-0EE3-44B0-A3D1-86B8AEADB31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1763CB5E-0EE3-44B0-A3D1-86B8AEADB31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1763CB5E-0EE3-44B0-A3D1-86B8AEADB31D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9252A155-BC07-4938-9661-14E18F4B5077}
+	EndGlobalSection
+EndGlobal
