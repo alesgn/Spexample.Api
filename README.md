@@ -1,3 +1,3 @@
-# SpektrixApi
+# Spexample Api
 
-How SpektrixAPI will look like in the future!
+How Spexample API will look like in the future!
