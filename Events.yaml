@@ -17,9 +17,9 @@ paths:
       summary: Retrieve events by eventId
       operationsId: get-event-by-id
       parameters:
-        - eventId: This is the Id of the event
+        - name: eventId
           in: path
-          description: Event ID
+          description: This is the Event ID
           required: true
           schema:
             type: integer
