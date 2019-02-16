@@ -1,16 +1,16 @@
 #Speccy
-#docker run wework/speccy lint https://bitbucket.org/alesgn/spektrixapi/src/master/Events.yaml
+#docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events.yaml
 
 #ReDoc
-# docker run -p 8080:80 -e SPEC_URL=https://bitbucket.org/alesgn/spektrixapi/src/master/Events.yaml redocly/redoc
+# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events.yaml redocly/redoc
 
 openapi: 3.0.0
 info:
   version: 4.0.0
-  title: Spektrix API
-  description: Let's build this new awesome Spektrix API v4
+  title: Spexample API
+  description: Let's build this new awesome Spexample API v4
 servers:
-  - url: https://system.spektrix.com/api/v4
+  - url: https://system.spexample.com/api/v4
 paths:
   /events/{eventId}:
     get:
