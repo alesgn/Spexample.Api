@@ -25,21 +25,19 @@ servers:
     apiVersion:
       default: v2
       description: Version of the API. Default is `v4`
-
-
 paths:
   /events/{eventId}:
     get:
       summary: Retrieve events by eventId
       operationsId: get-event-by-id
-      parameters:
-        - name: eventId
-          in: path
-          description: This is the Event ID
-          required: true
-          schema:
-            type: integer
-            format: int64
       responses:
         '200': 
           description: API event by Id reponse
+    parameters:
+    - name: eventId
+      in: path
+      description: This is the Event ID
+      required: true
+      schema:
+        type: integer
+        format: int64
