@@ -10,23 +10,7 @@ info:
   title: Spexample API
   description: Let us build this new awesome Spexample API v4
 servers:
-- url: https://system.spexample.com:{port}/{clientName}/api/{apiVersion}
-  description: Production API
-  variables:
-    clientName:
-      # We use demo as default
-      default: demo
-      description: Name of client accessing the API.
-    port:
-      enum:
-        - '8443'
-        - '443'
-      default: '8443'
-    apiVersion:
-      default: v2
-      description: Version of the API. Default is `v4`
-
-
+  - url: https://system.spexample.com/api/v4
 paths:
   /events/{eventId}:
     get:
