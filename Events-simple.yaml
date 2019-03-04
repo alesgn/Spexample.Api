@@ -12,18 +12,10 @@ info:
 servers:
   - url: https://system.spexample.com/api/v4
 paths:
-  /events/{eventId}:
+  /events:
     get:
-      summary: Retrieve events by eventId
-      operationsId: get-event-by-id
-      parameters:
-        - name: eventId
-          in: path
-          description: This is the Event ID
-          required: true
-          schema:
-            type: integer
-            format: int64
+      summary: Retrieve events
+      operationsId: get-events
       responses:
         '200': 
           description: API event by Id reponse
