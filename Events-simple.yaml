@@ -1,8 +1,8 @@
 #Speccy
-#docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events.yaml
+#docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml
 
 #ReDoc
-# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events.yaml redocly/redoc
+# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml redocly/redoc
 
 openapi: 3.0.0
 info:
