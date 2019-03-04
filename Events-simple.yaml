@@ -15,7 +15,7 @@ paths:
   /events:
     get:
       summary: Retrieve events
-      operationsId: get-events
+      operationId: get-events
       responses:
         '200': 
           description: API event by Id reponse
