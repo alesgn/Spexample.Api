@@ -1,5 +1,5 @@
 #Speccy
-#docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml
+# docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml
 
 #ReDoc
 # docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml redocly/redoc
@@ -12,10 +12,18 @@ info:
 servers:
   - url: https://system.spexample.com/api/v4
 paths:
-  /events:
+  /events/{eventId}:
     get:
-      summary: Retrieve events
-      operationId: get-events
+      summary: Retrieve events by eventId
+      operationId: get-event-by-id
+      parameters:
+        - name: eventId
+          in: path
+          description: This is the Event ID
+          required: true
+          schema:
+            type: integer
+            format: int64
       responses:
         '200': 
           description: API event by Id reponse
