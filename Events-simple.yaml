@@ -9,6 +9,10 @@ info:
   version: 4.0.0
   title: Spexample API
   description: Let us build this new awesome Spexample API v4
+  contact:
+    name: Spexample DevRel
+    email: devrel@spexample.com
+    url: 'https://developer.spexample.com/'
 servers:
   - url: https://system.spexample.com/api/v4
 paths:
