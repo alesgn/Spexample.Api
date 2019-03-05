@@ -31,3 +31,22 @@ paths:
       responses:
         '200': 
           description: API event by Id reponse
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+
+components:
+  schemas:
+    Event:
+      properties:
+        id:
+          type: string
+          example: '0A00000000ABCD00'
+        description:
+          type: string
+          example: 'Hamlet'
+        duration:
+          type: integer
+          format: int32
+          description: Duration of the event in minutes
