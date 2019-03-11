@@ -4,7 +4,7 @@
 #ReDoc
 # docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml redocly/redoc
 
-openapi: 3.0.0
+openapi: 3.0.0    #version of spec this doc is compatible with
 info:
   version: 4.0.0
   title: Spexample API
