@@ -1,8 +1,8 @@
 #Speccy
-# docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml
+# docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Specification/Customer_final.yaml
 
 #ReDoc
-# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Events-simple.yaml redocly/redoc
+# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Specification/Customer_final.yaml redocly/redoc
 
 openapi: 3.0.0    #version of spec this doc is compatible with
 info:
@@ -14,39 +14,49 @@ info:
     email: devrel@spexample.com
     url: 'https://developer.spexample.com/'
 servers:
-  - url: https://system.spexample.com/api/v4
+  - url: '{protocol}://system.spexample.com/{clientName}/api/v4'
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+      clientName:
+        default: test154
+        description: Name of the client accessing the api
 paths:
-  /events/{eventId}:
+  /customers/{customerId}:
     get:
-      summary: Retrieve events by eventId
-      operationId: get-event-by-id
+      summary: Retrieve a customer by customerId
+      operationId: get-customer-by-id
       parameters:
-        - name: eventId
+        - name: customerId
           in: path
-          description: This is the Event ID
+          description: This is the Customer ID
           required: true
           schema:
             type: integer
             format: int64
       responses:
         '200': 
-          description: API event by Id reponse
+          description: API customer by Id reponse
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Event"
+                $ref: "#/components/schemas/Customer"
 
 components:
   schemas:
-    Event:
+    Customer:
       properties:
         id:
           type: string
           example: '0A00000000ABCD00'
-        description:
+        FirstName:
           type: string
-          example: 'Hamlet'
-        duration:
-          type: integer
-          format: int32
-          description: Duration of the event in minutes
+          description: Customer first name
+          example: 'Homer'
+        LastName:
+          type: string
+          description: Customer last name
+          example: 'Simpson'
