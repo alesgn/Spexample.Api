@@ -25,6 +25,30 @@ servers:
         default: test154
         description: Name of the client accessing the api
 paths:
+  /customers:
+    post:
+      summary: Add a new customer to the system
+      operationId: add-new-customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+              properties:
+                title:
+                  description:
+                  example: "Demo Application"
+                  type: "string"
+                title:
+                  description:
+                  example: "Demo Application"
+                  type: "string"
+                title:
+                  description:
+                  example: "Demo Application"
+                  type: "string"
   /customers/{customerId}:
     get:
       summary: Retrieve a customer by customerId
@@ -51,6 +75,7 @@ components:
       properties:
         id:
           type: string
+          description: Customer Id
           example: '0A00000000ABCD00'
         FirstName:
           type: string
@@ -60,3 +85,11 @@ components:
           type: string
           description: Customer last name
           example: 'Simpson'
+
+public string Title { get; set; }
+public string FirstName { get; set;}
+public string LastName { get; set; }
+public string Email { get; set; }
+public DateTime? BirthDate { get; set; }
+public string Mobile { get; set; }
+public string Phone { get; set; }
