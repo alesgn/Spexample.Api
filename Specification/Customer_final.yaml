@@ -29,6 +29,8 @@ paths:
     post:
       summary: Add a new customer to the system
       operationId: add-new-customer
+      tags:
+        - customer
       requestBody:
         required: true
         content:
@@ -39,7 +41,7 @@ paths:
               properties:
                 Title:
                   description: Title of the customer
-                  example: Mr
+                  example: Mr.
                   type: string
                 FirstName:
                   description: First name of the customer
@@ -73,6 +75,8 @@ paths:
     get:
       summary: Retrieve a customer by customerId
       operationId: get-customer-by-id
+      tags:
+        - customer
       parameters:
         - name: customerId
           in: path
@@ -88,6 +92,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+              example:
+                Homer:
+                  value:
+                    id: 00DSFSW535SFS23
+                    FirstName: Homer
+                    LastName: Simpson
+                Bart:
+                  value:
+                    id: 76834HUSGU789DS
+                    FirstName: Bart
+                    LastName: Simpson
 
 components:
   schemas:
@@ -119,5 +134,13 @@ components:
           type: string
         isBilling:
           type: boolean
+          example: true
         isDelivery:
           type: boolean
+          example: false
+
+tags:
+  - name: customer
+    description: All the available calls for Customer
+    externalDocs:
+      url: http://docs.my-api.com/customer-operations.htm
