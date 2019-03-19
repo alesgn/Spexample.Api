@@ -37,18 +37,36 @@ paths:
               required:
                 - name
               properties:
-                title:
-                  description:
-                  example: "Demo Application"
-                  type: "string"
-                title:
-                  description:
-                  example: "Demo Application"
-                  type: "string"
-                title:
-                  description:
-                  example: "Demo Application"
-                  type: "string"
+                Title:
+                  description: Title of the customer
+                  example: Mr
+                  type: string
+                FirstName:
+                  description: First name of the customer
+                  example: Bart
+                  type: string
+                LastName:
+                  description: Last name of the customer
+                  example: Simpson
+                  type: string
+                Email:
+                  description: Email address of the customer
+                  example: bart.simpson@springfield.com
+                  type: string
+                  format: email
+                Birthdate:
+                  description: Date of birth of the customer
+                  example: Last name of the customer
+                  type: string
+                Mobile:
+                  description: Mobile number of the customer
+                  example: "+447463829485"
+                  type: string
+                Addresses:
+                  type: array
+                  items: 
+                    $ref: "#/components/schemas/Address"
+  
   /customers/{customerId}:
     get:
       summary: Retrieve a customer by customerId
@@ -85,11 +103,19 @@ components:
           type: string
           description: Customer last name
           example: 'Simpson'
-
-public string Title { get; set; }
-public string FirstName { get; set;}
-public string LastName { get; set; }
-public string Email { get; set; }
-public DateTime? BirthDate { get; set; }
-public string Mobile { get; set; }
-public string Phone { get; set; }
+    Address:
+      type: object
+      properties:
+        name:
+          type: string
+          format: email
+        town:
+          type: string
+        line1:
+          type: string
+        line2:
+          type: string
+        isBilling:
+          type: boolean
+        isDelivery:
+          type: boolean
