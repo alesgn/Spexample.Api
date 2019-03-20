@@ -3,3 +3,108 @@
 
 #ReDoc
 # docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Specification/Customers.yaml redocly/redoc
+
+openapi: 3.0.0
+info:
+  version: 4.0.0
+  title: Spexample API
+  description: Let us build this new awesome Spexample API v4
+servers:
+  - url: '{protocol}://system.spexample.com/{clientName}/api/v4'
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+      clientName:
+        default: test154
+        description: Name of the client accessing the api
+paths:
+  /customers:
+    post:
+      summary: Add a new customer to the system
+      operationId: add-new-customer
+      tags:
+        - customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - FirstName
+                - LastName
+              properties:
+                Title:
+                  description: Title of the customer
+                  example: Mr.
+                  type: string
+                FirstName:
+                  description: First name of the customer
+                  example: Bart
+                  type: string
+                LastName:
+                  description: Last name of the customer
+                  example: Simpson
+                  type: string
+                Email:
+                  description: Email address of the customer
+                  example: bart.simpson@springfield.com
+                  type: string
+                  format: email
+                Birthdate:
+                  description: Date of birth of the customer
+                  example: Last name of the customer
+                  type: string
+                Mobile:
+                  description: Mobile number of the customer
+                  example: "+447463829485"
+                  type: string
+                Addresses:
+                  type: array
+                  items: 
+                    $ref: "#/components/schemas/Address"
+      responses:
+        '200': 
+          description: Confirmation of new customer added
+
+components:
+  responses:  
+    Unauthorised: 
+      description: 'Wrong credentials'
+    NotFound: 
+      description: 'Resource could not be found'
+  schemas:
+    Customer:
+      properties:
+        id:
+          type: string
+          description: Customer Id
+          example: '0A00000000ABCD00'
+        FirstName:
+          type: string
+          description: Customer first name
+          example: 'Homer'
+        LastName:
+          type: string
+          description: Customer last name
+          example: 'Simpson'
+    Address:
+      type: object
+      properties:
+        name:
+          type: string
+          format: email
+        town:
+          type: string
+        line1:
+          type: string
+        line2:
+          type: string
+        isBilling:
+          type: boolean
+          example: true
+        isDelivery:
+          type: boolean
+          example: false
