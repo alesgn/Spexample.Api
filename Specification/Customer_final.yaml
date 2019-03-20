@@ -83,28 +83,25 @@ paths:
           description: This is the Customer ID
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
+            example: 0A00000000ABCD00
       responses:
         '200': 
           description: API customer by Id reponse
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Customer"
-              example:
-                Homer:
-                  value:
-                    id: 00DSFSW535SFS23
-                    FirstName: Homer
-                    LastName: Simpson
-                Bart:
-                  value:
-                    id: 76834HUSGU789DS
-                    FirstName: Bart
-                    LastName: Simpson
-
+                $ref: '#/components/schemas/Customer'
+        '401': 
+          $ref: '#/components/responses/Unauthorised'
+        '404': 
+          $ref: '#/components/responses/NotFound'
 components:
+  responses:  
+    Unauthorised: 
+      description: 'Wrong credentials'
+    NotFound: 
+      description: 'Resourse could not be found'
   schemas:
     Customer:
       properties:

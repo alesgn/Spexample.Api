@@ -1,0 +1,5 @@
+#Speccy
+# docker run wework/speccy lint https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Specification/Customers.yaml
+
+#ReDoc
+# docker run -p 8080:80 -e SPEC_URL=https://raw.githubusercontent.com/alesgn/Spexample.Api/master/Specification/Customers.yaml redocly/redoc
