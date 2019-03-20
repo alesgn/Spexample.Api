@@ -37,7 +37,8 @@ paths:
           application/json:
             schema:
               required:
-                - name
+                - FirstName
+                - LastName
               properties:
                 Title:
                   description: Title of the customer
@@ -70,7 +71,8 @@ paths:
                     $ref: "#/components/schemas/Address"
       responses:
         '200': 
-          description: Confirmation of new customer added  
+          description: Confirmation of new customer added
+          
   /customers/{customerId}:
     get:
       summary: Retrieve a customer by customerId
@@ -101,7 +103,7 @@ components:
     Unauthorised: 
       description: 'Wrong credentials'
     NotFound: 
-      description: 'Resourse could not be found'
+      description: 'Resource could not be found'
   schemas:
     Customer:
       properties:
