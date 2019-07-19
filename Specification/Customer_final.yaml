@@ -14,7 +14,7 @@ info:
     email: devrel@spexample.com
     url: 'https://developer.spexample.com/'
 servers:
-  - url: '{protocol}://system.spexample.com/{clientName}/api/v4'
+  - url: 'http://system.spexample.com/{clientName}/api/v4'
     variables:
       protocol:
         enum:
