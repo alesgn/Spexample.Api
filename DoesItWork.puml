@@ -1,0 +1,21 @@
+@startuml TestOverview
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Component.puml
+
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Integration/AzureServiceBus.puml
+!includeurl AzurePuml/DevOps/AzurePipelines.puml
+!includeurl AzurePuml/Web/all.puml
+!includeurl AzurePuml/Compute/AzureFunction.puml
+
+LAYOUT_LEFT_RIGHT
+
+System(niceService, "This is a nice service")
+AzureServiceBus(messageBroker, "Message Broker", "PaaS Azure Service Bus")
+System(nastyService, "This is a nasty service")
+
+Rel(niceService, messageBroker, "Sends a message to")
+Rel(messageBroker, nastyService, "Delivers a message to")
+
+@enduml
